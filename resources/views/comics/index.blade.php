@@ -31,14 +31,19 @@
                             <td class="d-flex justify-content-between">
                                 <a class="btn btn-primary" href="{{route('comics.show', ['comic' => $comic->id])}}" role="button">Show</a>
                                 <a class="btn btn-warning" href="{{route('comics.edit', ['comic' => $comic->id])}}" role="button">Edit</a>
-                                <form action="{{route('comics.destroy', ['comic' => $comic->id])}}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
+                                <button type="button" class="btn btn-danger" id="delete_bttn">Delete</button>
                             </td>
                         </tr>
+                        <!-- POPUP --> 
+                        <div id="popup" style="display: none;">
+                            <form action="{{route('comics.destroy', ['comic' => $comic->id])}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" id="delete_bttn">Delete</button>
+                            </form>
+                        </div>
+                        <!-- fine POPUP --> 
+                            
                     @empty
                         <h1>Non ci sono elementi da visualizzare</h1>
                     @endforelse

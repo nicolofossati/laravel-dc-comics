@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Styles -->
-    @vite('resources/js/app.js')
+    @vite('resources/js/app.js') defer
 
     <title>@yield('page-title')</title>
 </head>
