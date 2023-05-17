@@ -6,11 +6,7 @@
 
     <main>
         <div class="container">
-            @forelse ($comics as $comic)
-                {{$comic['title']}}<br>
-            @empty
-                
-            @endforelse
+            <h1>Sono alla HomePage</h1>
         </div>
     </main>
 
