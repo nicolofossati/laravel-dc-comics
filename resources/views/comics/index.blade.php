@@ -22,7 +22,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @forelse ($comics as $comic)
+                    @forelse ($comics as $index => $comic)
                         <tr>
                             <th scope="row">{{$comic['id']}}</th>
                             <td>{{$comic['title']}}</td>
@@ -31,19 +31,13 @@
                             <td class="d-flex justify-content-between">
                                 <a class="btn btn-primary" href="{{route('comics.show', ['comic' => $comic->id])}}" role="button">Show</a>
                                 <a class="btn btn-warning" href="{{route('comics.edit', ['comic' => $comic->id])}}" role="button">Edit</a>
-                                <button type="button" class="btn btn-danger" id="delete_bttn">Delete</button>
+                                <form action="{{route('comics.destroy', ['comic' => $comic->id])}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger" id="delete_bttn">Delete</button>
+                                </form>
                             </td>
                         </tr>
-                        <!-- POPUP --> 
-                        <div id="popup" style="display: none;">
-                            <form action="{{route('comics.destroy', ['comic' => $comic->id])}}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" id="delete_bttn">Delete</button>
-                            </form>
-                        </div>
-                        <!-- fine POPUP --> 
-                            
                     @empty
                         <h1>Non ci sono elementi da visualizzare</h1>
                     @endforelse

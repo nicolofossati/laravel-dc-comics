@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Styles -->
-    @vite('resources/js/app.js') defer
+    @vite('resources/js/app.js')
 
     <title>@yield('page-title')</title>
 </head>
@@ -18,5 +18,6 @@
     </main>
 
     @include('partials.footer')
+    
 </body>
 </html>

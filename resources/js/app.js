@@ -10,10 +10,11 @@ import.meta.glob([
 
 //const delete_button = document.getElementById('delete_bttn');
 
+/*
+document.querySelectorAll(".btn-danger").forEach((element) => {
 
-
-function popup() {
-    console.log('booooh');
-}
-
-document.getElementById("delete_bttn").addEventListener("click", popup);
+    element.addEventListener("click", function () {
+        console.log("elemen.id");
+    });
+});
+*/
