@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title') Index  @endsection
+@section('page-title') Comics List  @endsection
 
 @section('content') 
 
@@ -8,7 +8,9 @@
         <div class="container">
             
             @forelse ($comics as $comic)
-                {{$comic['title']}}<br>
+                {{$comic['title']}}
+                <a class="btn btn-primary" href="{{route('comics.show', ['comic' => $comic->id])}}" role="button">Show</a>
+                <br>
             @empty
         
             @endforelse
