@@ -11,37 +11,44 @@
 
                 <div class="col-12">
                   <label for="title" class="form-label">Titolo</label>
-                  <input type="text" class="form-control" id="title" name="title">
+                  <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title">
+                  @error('title') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
 
                 <div class="col-12">
                   <label for="thumb" class="form-label">URL immagine</label>
-                  <input type="text" class="form-control" id="thumb" name="thumb">
+                  <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb">
+                  @error('thumb') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
 
                 <div class="col-md-6">
                   <label for="price" class="form-label">Prezzo</label>
-                  <input type="text" class="form-control" id="price" name="price">
+                  <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price">
+                  @error('price') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
 
                 <div class="col-md-6">
                     <label for="series" class="form-label">Serie</label>
-                    <input type="text" class="form-control" id="series" name="series">
+                    <input type="text" class="form-control @error('series') is-invalid @enderror" id="series" name="series">
+                    @error('series') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
 
                 <div class="col-md-6">
                     <label for="sale_date" class="form-label">Data di uscita</label>
-                    <input type="text" class="form-control" id="sale_date" name="sale_date">
+                    <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" name="sale_date">
+                    @error('sale_date') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
 
                 <div class="col-md-6">
                     <label for="type" class="form-label">Tipo</label>
-                    <input type="text" class="form-control" id="type" name="type">
+                    <input type="text" class="form-control @error('type') is-invalid @enderror" id="type" name="type">
+                    @error('type') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
 
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Descrizione" id="description" name="description"></textarea>
+                    <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Descrizione" id="description" name="description"></textarea>
                     <label for="description">Descrizione</label>
+                    @error('description') <div class="alert alert-danger">{{ $message }}</div> @enderror
                 </div>
                 
                 <div class="col-12">
